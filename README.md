@@ -1,0 +1,1 @@
+# GarageDoor_MQTT_JSON
