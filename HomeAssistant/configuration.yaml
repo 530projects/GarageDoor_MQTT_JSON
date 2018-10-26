@@ -91,3 +91,7 @@ cover:
             topic: "/garage/Door2/cmd/"
             payload: "OPEN"
         icon_template: "{% if is_state('sensor.garage_door2', 'on') %}mdi:garage-open{% else %}mdi:garage{% endif %}"
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
