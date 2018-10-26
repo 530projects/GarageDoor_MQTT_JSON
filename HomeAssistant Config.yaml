@@ -1,0 +1,48 @@
+sensor:
+  - platform: yr
+  - platform: mqtt
+    name: 'Garage Temp'
+    state_topic: '/garage/Status/'
+    unit_of_measurement: '°F'
+    value_template: '{{ value_json.temperature }}'
+  - platform: mqtt
+    name: 'Garage Humid'
+    state_topic: '/garage/Status/'
+    unit_of_measurement: '%'
+    value_template: '{{ value_json.humidity }}'
+  - platform: mqtt
+    name: 'Garage Door1'
+    state_topic: '/garage/Status/'
+    value_template: '{{ value_json.door1state }}'
+  - platform: mqtt
+    name: 'Garage Door2'
+    state_topic: '/garage/Status/'
+    value_template: '{{ value_json.door2state }}'
+  - platform: mqtt
+    name: 'Garage Motion'
+    state_topic: '/garage/Status/'
+    value_template: '{{ value_json.motion }}'
+  - platform: mqtt
+    name: 'Garage Light'
+    state_topic: '/garage/Status/'
+    value_template: '{{ value_json.lights }}'
+  - platform: mqtt
+    name: 'Garage LDR'
+    state_topic: '/garage/Status/'
+    value_template: '{{ value_json.ldr }}'
+    unit_of_measurement: 'ADC'
+  - platform: mqtt
+    name: 'Garage 1 Distance'
+    state_topic: '/garage/Status/'
+    value_template: '{{ value_json.Echo1cm }}'
+    unit_of_measurement: 'cm'
+  - platform: mqtt
+    name: 'Garage 2 Distance'
+    state_topic: '/garage/Status/'
+    value_template: '{{ value_json.Echo2cm }}'
+    unit_of_measurement: 'cm'
+  - platform: mqtt
+    name: 'Garage Sensor RSSI'
+    state_topic: '/garage/Status/'
+    value_template: '{{ value_json.rssi }}'
+    unit_of_measurement: 'dB'
