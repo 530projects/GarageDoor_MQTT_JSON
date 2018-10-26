@@ -1,0 +1,15 @@
+garage_door_button:
+  alias: "Main Garage Door Button"
+  sequence:
+    service: mqtt.publish
+    data:
+      topic: "/garage/Door1/cmd/"
+      payload: "OPEN"
+
+garage_door_light:
+  alias: "Main Garage Door Light"
+  sequence:
+    service: mqtt.publish
+    data:
+      topic: "/garage/Door1/cmd/"
+      payload: "LIGHT"
