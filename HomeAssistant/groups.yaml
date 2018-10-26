@@ -1,0 +1,20 @@
+####VIEWS####
+Garage_View:
+  name: Garage
+  view: yes
+  entities:
+   - group.Garage
+
+###GROUPS###
+Garage:
+  - cover.main_garage_door
+  - cover.garage_door2
+  - script.garage_door_light
+  - sensor.garage_1_distance
+  - sensor.garage_2_distance
+  - sensor.garage_temp
+  - sensor.garage_humid
+  - sensor.garage_motion
+  - sensor.garage_light
+  - sensor.garage_ldr
+  - sensor.garage_sensor_rssi
