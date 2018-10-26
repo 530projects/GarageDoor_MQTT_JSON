@@ -1,0 +1,43 @@
+- id: Text Garage Open Anytime
+  alias: Text Garage Open Anytime
+  trigger:
+    platform: state
+    entity_id: cover.main_garage_door
+    from: closed
+    to: open
+    for:
+      seconds: 20
+  action:
+    service: notify.text_andy
+    data:
+      message: The Main Garage Door has been Opened
+- id: Text Garage Closed in Morning
+  alias: Text Garage Closed in Moring
+  trigger:
+    platform: state
+    entity_id: cover.main_garage_door
+    from: open
+    to: closed
+    for:
+      seconds: 20
+  condition:
+    condition: time
+    after: 05:00:00
+    before: 08:30:00
+  action:
+    service: notify.text_andy
+    data:
+      message: Garage Door Closed
+- id: Text Garage Left Open
+  alias: Text Garage Left Open
+  trigger:
+    platform: state
+    entity_id: cover.main_garage_door
+    from: closed
+    to: open
+    for:
+      minutes: 8
+  action:
+    service: notify.text_andy
+    data:
+      message: The Main Garage Door has been left Open for several minutes.
