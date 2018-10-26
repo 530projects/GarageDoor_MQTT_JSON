@@ -1,0 +1,18 @@
+sensor.garage_light:
+  icon: mdi:lightbulb-outline
+sensor.garage_1_distance:
+  icon: mdi:ruler
+sensor.garage_2_distance:
+  icon: mdi:satellite-variant
+sensor.garage_humid:
+  icon: mdi:water-percent
+sensor.garage_door2:
+  icon: mdi:garage
+script.garage_door_light:
+  icon: mdi:lightbulb-outline
+sensor.garage_ldr:
+  icon: mdi:gauge
+sensor.garage_sensor_rssi:
+  icon: mdi:signal
+sensor.garage_motion:
+  icon: mdi:walk
