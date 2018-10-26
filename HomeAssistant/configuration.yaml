@@ -46,3 +46,48 @@ sensor:
     state_topic: '/garage/Status/'
     value_template: '{{ value_json.rssi }}'
     unit_of_measurement: 'dB'
+
+cover:
+  - platform: template
+    covers:
+      main_garage_door:
+        friendly_name: 'Main Garage Door'
+        value_template: "{% if is_state('sensor.garage_door1', 'off') %}closed{% else %}open{% endif %}"
+        open_cover:
+          service: mqtt.publish
+          data:
+            topic: "/garage/Door1/cmd/"
+            payload: "OPEN"
+        close_cover:
+          service: mqtt.publish
+          data:
+            topic: "/garage/Door1/cmd/"
+            payload: "OPEN"
+        stop_cover:
+          service: mqtt.publish
+          data:
+            topic: "/garage/Door1/cmd/"
+            payload: "OPEN"
+        icon_template: "{% if is_state('sensor.garage_door1', 'on') %}mdi:garage-open{% else %}mdi:garage{% endif %}"
+
+  - platform: template
+    covers:
+      garage_door2:
+        friendly_name: 'Small Garage Door'
+        value_template: "{{ sensor.garage_door2 }}"
+        open_cover:
+          service: mqtt.publish
+          data:
+            topic: "/garage/Door2/cmd/"
+            payload: "OPEN"
+        close_cover:
+          service: mqtt.publish
+          data:
+            topic: "/garage/Door2/cmd/"
+            payload: "OPEN"
+        stop_cover:
+          service: mqtt.publish
+          data:
+            topic: "/garage/Door2/cmd/"
+            payload: "OPEN"
+        icon_template: "{% if is_state('sensor.garage_door2', 'on') %}mdi:garage-open{% else %}mdi:garage{% endif %}"
